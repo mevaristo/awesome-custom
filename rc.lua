@@ -257,6 +257,10 @@ local screenshot = 'import -window root ~/Pictures/screenshots/print.$(date +"%Y
 local volume_down = 'amixer -D pulse sset Master 2%-' 
 local volume_up = 'amixer -D pulse sset Master 2%+'
 local toggle_mute = 'amixer -D pulse set Master 1+ toggle'
+local next_music = 'playerctl next'
+local prev_music = 'playerctl previous'
+local play_music = 'playerctl play'
+local pause_music = 'playerctl pause'
 -- end customized
 
 -- {{{ Key bindings
@@ -275,6 +279,19 @@ globalkeys = my_table.join(
     
     awful.key({ }, "XF86AudioMute", function() os.execute(toggle_mute) end,
               {description = "mute (amixer)", group = "hotkeys"}),
+
+    -- multimedia control
+    awful.key({ }, "XF86AudioPlay", function() os.execute(play_music) end,
+              {group = "hotkeys"}),
+
+    awful.key({ }, "XF86AudioPause", function() os.execute(pause_music) end,
+              {group = "hotkeys"}),
+
+    awful.key({ }, "XF86AudioNext", function() os.execute(next_music) end,
+              {group = "hotkeys"}),
+
+    awful.key({ }, "XF86AudioPrev", function() os.execute(prev_music) end,
+              {group = "hotkeys"}),
 
     -- end customized
     -- X screen locker
