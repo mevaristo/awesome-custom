@@ -284,7 +284,7 @@ globalkeys = my_table.join(
     awful.key({ }, "XF86AudioPlay", function() os.execute(play_music) end,
               {group = "hotkeys"}),
 
-    awful.key({ }, "XF86AudioPause", function() os.execute(pause_music) end,
+    awful.key({ }, "XF86AudioStop", function() os.execute(pause_music) end,
               {group = "hotkeys"}),
 
     awful.key({ }, "XF86AudioNext", function() os.execute(next_music) end,
